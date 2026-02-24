@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
         const stmt = db.prepare(
             'INSERT INTO contact_messages (name, email, phone, message) VALUES (?, ?, ?, ?)'
         );
-        stmt.run(name, email, phone, message);
+        await stmt.run([name, email, phone, message]);
 
         return NextResponse.json({ success: true, message: 'Message sent successfully!' });
     } catch (error) {

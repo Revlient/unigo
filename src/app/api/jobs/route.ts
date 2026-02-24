@@ -4,9 +4,9 @@ import { seedDatabase } from '@/lib/seed';
 
 export async function GET() {
     try {
-        seedDatabase();
+        await seedDatabase();
         const db = getDb();
-        const jobs = db.prepare('SELECT * FROM jobs ORDER BY created_at DESC').all();
+        const jobs = await db.prepare('SELECT * FROM jobs ORDER BY created_at DESC').all();
         return NextResponse.json(jobs);
     } catch (error) {
         console.error('Error fetching jobs:', error);

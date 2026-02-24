@@ -51,22 +51,20 @@ const DEMO_JOBS = [
     }
 ];
 
-export function seedDatabase() {
+export async function seedDatabase() {
     const db = getDb();
-    const count = db.prepare('SELECT COUNT(*) as count FROM jobs').get() as { count: number };
+    const res = await db.prepare('SELECT COUNT(*) as count FROM jobs').get();
+    const count = res.count;
 
-    if (count.count === 0) {
+    if (count === 0) {
         const insert = db.prepare(
-            'INSERT INTO jobs (title, location, experience, description) VALUES (@title, @location, @experience, @description)'
+            'INSERT INTO jobs (title, location, experience, description) VALUES (?, ?, ?, ?)'
         );
 
-        const insertMany = db.transaction((jobs: typeof DEMO_JOBS) => {
-            for (const job of jobs) {
-                insert.run(job);
-            }
-        });
-
-        insertMany(DEMO_JOBS);
+        // For simplicity, we loop instead of using a transaction in the hybrid layer
+        for (const job of DEMO_JOBS) {
+            await insert.run([job.title, job.location, job.experience, job.description]);
+        }
         console.log(`Seeded ${DEMO_JOBS.length} demo jobs`);
     }
 }

@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
             `INSERT INTO job_applications (full_name, email, phone, location, job_id, experience, resume_path, cover_letter) 
        VALUES (?, ?, ?, ?, ?, ?, ?, ?)`
         );
-        stmt.run(fullName, email, phone, location, parseInt(jobId), experience, resumePath, coverLetter || '');
+        await stmt.run([fullName, email, phone, location, parseInt(jobId), experience, resumePath, coverLetter || '']);
 
         return NextResponse.json({ success: true, message: 'Application submitted successfully!' });
     } catch (error) {
