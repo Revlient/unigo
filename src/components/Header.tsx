@@ -36,8 +36,8 @@ export default function Header() {
             animate={{ y: 0 }}
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-                    ? 'bg-white/80 backdrop-blur-md shadow-lg border-b border-white/30'
-                    : 'bg-white/20 backdrop-blur-md border-b border-white/30'
+                ? 'bg-black/80 backdrop-blur-md shadow-lg shadow-black/20 border-b border-white/5'
+                : 'bg-black/20 backdrop-blur-md border-b border-white/5'
                 }`}
         >
             <nav className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
@@ -48,11 +48,11 @@ export default function Header() {
                     className="text-2xl font-bold tracking-tight"
                     whileHover={{ scale: 1.05 }}
                 >
-                    <span className={`transition-colors duration-300 ${scrolled ? 'text-primary' : 'text-white'}`}>
-                        Talent
+                    <span className="text-white">
+                        Uni
                     </span>
-                    <span className={`transition-colors duration-300 ${scrolled ? 'text-blue-500' : 'text-blue-200'}`}>
-                        Bridge
+                    <span className="text-blue-400">
+                        Go
                     </span>
                 </motion.a>
 
@@ -64,8 +64,8 @@ export default function Header() {
                                 href={link.href}
                                 onClick={(e) => handleNavClick(e, link.href)}
                                 className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${scrolled
-                                        ? 'text-gray-700 hover:bg-primary hover:text-white'
-                                        : 'text-white/90 hover:bg-white/20 hover:text-white'
+                                    ? 'text-gray-300 hover:bg-blue-600 hover:text-white'
+                                    : 'text-white/80 hover:bg-white/10 hover:text-white'
                                     }`}
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
@@ -78,7 +78,7 @@ export default function Header() {
                         <motion.a
                             href="#contact"
                             onClick={(e) => handleNavClick(e, '#contact')}
-                            className="ml-2 px-5 py-2.5 bg-primary text-white rounded-xl text-sm font-semibold shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300"
+                            className="ml-2 px-5 py-2.5 bg-blue-600 text-white rounded-xl text-sm font-semibold shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 transition-all duration-300"
                             whileHover={{ scale: 1.05, y: -2 }}
                             whileTap={{ scale: 0.95 }}
                         >
@@ -93,9 +93,9 @@ export default function Header() {
                     className="md:hidden flex flex-col gap-1.5 p-2"
                     aria-label="Toggle menu"
                 >
-                    <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? 'bg-gray-800' : 'bg-white'} ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
-                    <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? 'bg-gray-800' : 'bg-white'} ${mobileOpen ? 'opacity-0' : ''}`} />
-                    <span className={`block w-6 h-0.5 transition-all duration-300 ${scrolled ? 'bg-gray-800' : 'bg-white'} ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+                    <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`} />
+                    <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? 'opacity-0' : ''}`} />
+                    <span className={`block w-6 h-0.5 bg-white transition-all duration-300 ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`} />
                 </button>
             </nav>
 
@@ -103,7 +103,7 @@ export default function Header() {
             <motion.div
                 initial={false}
                 animate={mobileOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
-                className="md:hidden overflow-hidden bg-white/95 backdrop-blur-lg"
+                className="md:hidden overflow-hidden bg-black/95 backdrop-blur-lg"
             >
                 <ul className="px-6 py-4 flex flex-col gap-2">
                     {navLinks.map((link) => (
@@ -111,7 +111,7 @@ export default function Header() {
                             <a
                                 href={link.href}
                                 onClick={(e) => handleNavClick(e, link.href)}
-                                className="block px-4 py-3 rounded-xl text-gray-700 font-medium hover:bg-primary/10 hover:text-primary transition-all duration-200"
+                                className="block px-4 py-3 rounded-xl text-gray-300 font-medium hover:bg-white/5 hover:text-blue-400 transition-all duration-200"
                             >
                                 {link.name}
                             </a>

@@ -46,7 +46,7 @@ const services = [
 
 export default function Services() {
     return (
-        <section id="services" className="py-24 px-6 bg-gradient-to-b from-gray-50 to-white">
+        <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-[#0a0a0a] to-[#111111]">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial="hidden"
@@ -56,14 +56,14 @@ export default function Services() {
                     className="text-center mb-16"
                 >
                     <div className="inline-flex items-center gap-2 mb-4">
-                        <div className="w-8 h-1 bg-primary rounded-full" />
-                        <span className="text-sm font-semibold text-primary uppercase tracking-wider">What We Do</span>
-                        <div className="w-8 h-1 bg-primary rounded-full" />
+                        <div className="w-8 h-1 bg-blue-500 rounded-full" />
+                        <span className="text-sm font-semibold text-blue-400 uppercase tracking-wider">What We Do</span>
+                        <div className="w-8 h-1 bg-blue-500 rounded-full" />
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
                         Our Services
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-gray-400 max-w-2xl mx-auto">
                         We offer a comprehensive suite of recruitment and HR solutions designed to help organizations
                         find, attract, and retain the best talent in the market.
                     </p>
@@ -82,16 +82,16 @@ export default function Services() {
                             variants={fadeInUp}
                             className="group"
                         >
-                            <div className="h-full p-8 bg-white rounded-3xl border-2 border-gray-100 hover:border-primary/30 shadow-sm hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 hover:-translate-y-2">
-                                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary/10 to-blue-50 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                            <div className="h-full p-8 bg-[#141414] rounded-3xl border-2 border-white/5 hover:border-blue-500/30 shadow-sm hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 hover:-translate-y-2">
+                                <div className="w-14 h-14 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                                     {service.icon}
                                 </div>
 
-                                <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
+                                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">
                                     {service.title}
                                 </h3>
 
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-gray-500 text-sm leading-relaxed">
                                     {service.description}
                                 </p>
                             </div>

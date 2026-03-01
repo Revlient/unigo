@@ -21,11 +21,11 @@ const companies = [
 function CompanyLogo({ name, logo }: { name: string; logo: string }) {
     return (
         <div className="flex-shrink-0 mx-6 group cursor-default">
-            <div className="flex items-center gap-3 px-8 py-4 bg-white rounded-2xl shadow-sm border border-gray-100 hover:shadow-md hover:border-primary/20 transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary/10 to-blue-50 flex items-center justify-center text-primary font-bold text-sm">
+            <div className="flex items-center gap-3 px-8 py-4 bg-[#141414] rounded-2xl shadow-sm border border-white/5 hover:shadow-md hover:border-blue-500/20 transition-all duration-300">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 font-bold text-sm">
                     {logo}
                 </div>
-                <span className="text-gray-700 font-semibold whitespace-nowrap">{name}</span>
+                <span className="text-gray-300 font-semibold whitespace-nowrap">{name}</span>
             </div>
         </div>
     );
@@ -33,7 +33,7 @@ function CompanyLogo({ name, logo }: { name: string; logo: string }) {
 
 export default function CompaniesMarquee() {
     return (
-        <section className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+        <section className="py-20 bg-gradient-to-b from-[#111111] to-[#0a0a0a] overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 mb-12">
                 <motion.div
                     initial="hidden"
@@ -43,11 +43,11 @@ export default function CompaniesMarquee() {
                     className="text-center"
                 >
                     <div className="inline-flex items-center gap-2 mb-4">
-                        <div className="w-8 h-1 bg-primary rounded-full" />
-                        <span className="text-sm font-semibold text-primary uppercase tracking-wider">Our Partners</span>
-                        <div className="w-8 h-1 bg-primary rounded-full" />
+                        <div className="w-8 h-1 bg-blue-500 rounded-full" />
+                        <span className="text-sm font-semibold text-blue-400 uppercase tracking-wider">Our Partners</span>
+                        <div className="w-8 h-1 bg-blue-500 rounded-full" />
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white">
                         Companies We Recruit For
                     </h2>
                 </motion.div>
@@ -55,8 +55,8 @@ export default function CompaniesMarquee() {
 
             {/* Marquee Row 1 */}
             <div className="relative group">
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
 
                 <div className="flex animate-marquee group-hover:[animation-play-state:paused]">
                     {[...companies, ...companies].map((company, i) => (
@@ -67,8 +67,8 @@ export default function CompaniesMarquee() {
 
             {/* Marquee Row 2 (reverse) */}
             <div className="relative group mt-6">
-                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
+                <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
 
                 <div className="flex animate-marquee-reverse group-hover:[animation-play-state:paused]">
                     {[...companies.slice().reverse(), ...companies.slice().reverse()].map((company, i) => (

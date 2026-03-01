@@ -95,27 +95,27 @@ export default function Contact() {
     };
 
     const inputClass =
-        'w-full px-4 py-3.5 bg-gray-50 border-2 border-gray-100 rounded-xl text-gray-900 text-sm placeholder-gray-400 focus:outline-none focus:border-primary/50 focus:bg-white transition-all duration-300';
+        'w-full px-4 py-3.5 bg-white/5 border-2 border-white/10 rounded-xl text-white text-sm placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/10 transition-all duration-300';
 
     return (
-        <section id="contact" className="py-24 px-6 bg-gradient-to-b from-gray-50 to-white">
+        <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-[#111111] to-[#0a0a0a]">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
                     variants={fadeInUp}
-                    className="text-center mb-16"
+                    className="text-center mb-10 sm:mb-16"
                 >
                     <div className="inline-flex items-center gap-2 mb-4">
-                        <div className="w-8 h-1 bg-primary rounded-full" />
-                        <span className="text-sm font-semibold text-primary uppercase tracking-wider">Get In Touch</span>
-                        <div className="w-8 h-1 bg-primary rounded-full" />
+                        <div className="w-8 h-1 bg-blue-500 rounded-full" />
+                        <span className="text-sm font-semibold text-blue-400 uppercase tracking-wider">Get In Touch</span>
+                        <div className="w-8 h-1 bg-blue-500 rounded-full" />
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">
                         Contact Us
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto">
+                    <p className="text-gray-400 max-w-2xl mx-auto">
                         Have a question or want to work with us? Reach out and we&apos;ll get back to you promptly.
                     </p>
                 </motion.div>
@@ -128,15 +128,15 @@ export default function Contact() {
                         viewport={{ once: true }}
                         variants={fadeInLeft}
                     >
-                        <div className="bg-white rounded-3xl shadow-xl shadow-gray-200/50 p-8 md:p-10 h-full border border-gray-100">
+                        <div className="bg-[#141414] rounded-3xl shadow-xl shadow-black/40 p-5 sm:p-8 md:p-10 h-full border border-white/5">
                             <div className="flex items-center gap-3 mb-8">
-                                <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/10 to-blue-50 flex items-center justify-center text-primary">
+                                <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400">
                                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                     </svg>
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold text-gray-900">Send a Message</h3>
+                                    <h3 className="text-xl font-bold text-white">Send a Message</h3>
                                     <p className="text-sm text-gray-500">We&apos;d love to hear from you</p>
                                 </div>
                             </div>
@@ -177,7 +177,7 @@ export default function Contact() {
                                 <motion.button
                                     type="submit"
                                     disabled={contactStatus === 'loading'}
-                                    className="w-full py-4 bg-gradient-to-r from-primary to-blue-700 text-white rounded-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 disabled:opacity-60"
+                                    className="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl font-semibold shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 transition-all duration-300 disabled:opacity-60"
                                     whileHover={{ scale: 1.02 }}
                                     whileTap={{ scale: 0.98 }}
                                 >
@@ -196,7 +196,7 @@ export default function Contact() {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0 }}
-                                        className="mt-4 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm font-medium flex items-center gap-2"
+                                        className="mt-4 p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-green-400 text-sm font-medium flex items-center gap-2"
                                     >
                                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -209,7 +209,7 @@ export default function Contact() {
                                         initial={{ opacity: 0, y: 10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         exit={{ opacity: 0 }}
-                                        className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-medium"
+                                        className="mt-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm font-medium"
                                     >
                                         Something went wrong. Please try again.
                                     </motion.div>
@@ -225,7 +225,7 @@ export default function Contact() {
                         viewport={{ once: true }}
                         variants={fadeInRight}
                     >
-                        <div className="bg-gradient-to-br from-primary to-blue-800 rounded-3xl p-8 md:p-10 h-full text-white">
+                        <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl p-5 sm:p-8 md:p-10 h-full text-white">
                             <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
                             <p className="text-blue-200 mb-10">
                                 Fill out the form and our team will get back to you within 24 hours.
@@ -252,7 +252,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <div className="text-sm text-blue-200">Email</div>
-                                        <div className="font-semibold">contact@talentbridge.com</div>
+                                        <div className="font-semibold text-sm sm:text-base break-all">info@themagnateacademy.com</div>
                                     </div>
                                 </div>
 
@@ -265,7 +265,7 @@ export default function Contact() {
                                     </div>
                                     <div>
                                         <div className="text-sm text-blue-200">Office</div>
-                                        <div className="font-semibold">Bangalore, Karnataka, India</div>
+                                        <div className="font-semibold text-sm leading-relaxed">1st Floor, Thykoottathil Square,<br />Civil Line Rd, opp. St. Joseph Church,<br />Vazhakkala, Kochi, Kakkanad,<br />Kerala 682030</div>
                                     </div>
                                 </div>
                             </div>
@@ -298,15 +298,15 @@ export default function Contact() {
                     variants={fadeInUp}
                     className="mt-16"
                 >
-                    <div className="bg-white rounded-3xl shadow-xl shadow-gray-200/50 p-8 md:p-12 border border-gray-100">
+                    <div className="bg-[#141414] rounded-3xl shadow-xl shadow-black/40 p-5 sm:p-8 md:p-12 border border-white/5">
                         <div className="flex items-center gap-3 mb-8">
-                            <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-primary/10 to-blue-50 flex items-center justify-center text-primary">
+                            <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400">
                                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
                             </div>
                             <div>
-                                <h3 className="text-2xl font-bold text-gray-900">Apply for a Job</h3>
+                                <h3 className="text-xl sm:text-2xl font-bold text-white">Apply for a Job</h3>
                                 <p className="text-sm text-gray-500">Submit your application and we&apos;ll be in touch</p>
                             </div>
                         </div>
@@ -372,17 +372,17 @@ export default function Contact() {
                             {/* File Upload */}
                             <div className="relative">
                                 <label className="block">
-                                    <div className={`flex items-center gap-3 px-4 py-3.5 bg-gray-50 border-2 ${resume ? 'border-primary/30 bg-primary/5' : 'border-gray-100'} rounded-xl cursor-pointer hover:border-primary/30 transition-all duration-300`}>
-                                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                    <div className={`flex items-center gap-3 px-4 py-3.5 bg-white/5 border-2 ${resume ? 'border-blue-500/30 bg-blue-500/5' : 'border-white/10'} rounded-xl cursor-pointer hover:border-blue-500/30 transition-all duration-300`}>
+                                        <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 flex-shrink-0">
                                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                                             </svg>
                                         </div>
                                         <div className="flex-1 min-w-0">
-                                            <div className="text-sm font-medium text-gray-700">
+                                            <div className="text-sm font-medium text-gray-300">
                                                 {resume ? resume.name : 'Upload Resume'}
                                             </div>
-                                            <div className="text-xs text-gray-400">
+                                            <div className="text-xs text-gray-500">
                                                 {resume ? `${(resume.size / 1024 / 1024).toFixed(2)} MB` : 'PDF, DOC, DOCX (Max 10MB)'}
                                             </div>
                                         </div>
@@ -393,7 +393,7 @@ export default function Contact() {
                                                     e.preventDefault();
                                                     setResume(null);
                                                 }}
-                                                className="text-gray-400 hover:text-red-500 transition-colors"
+                                                className="text-gray-500 hover:text-red-400 transition-colors"
                                             >
                                                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -421,7 +421,7 @@ export default function Contact() {
                             <motion.button
                                 type="submit"
                                 disabled={appStatus === 'loading'}
-                                className="w-full py-4 bg-gradient-to-r from-primary to-blue-700 text-white rounded-xl font-semibold shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 disabled:opacity-60"
+                                className="w-full py-4 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-xl font-semibold shadow-lg shadow-blue-600/20 hover:shadow-blue-600/40 transition-all duration-300 disabled:opacity-60"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
@@ -440,7 +440,7 @@ export default function Contact() {
                                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                                     animate={{ opacity: 1, y: 0, scale: 1 }}
                                     exit={{ opacity: 0 }}
-                                    className="mt-4 p-4 bg-green-50 border border-green-200 rounded-xl text-green-700 text-sm font-medium flex items-center gap-2"
+                                    className="mt-4 p-4 bg-green-500/10 border border-green-500/20 rounded-xl text-green-400 text-sm font-medium flex items-center gap-2"
                                 >
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -453,7 +453,7 @@ export default function Contact() {
                                     initial={{ opacity: 0, y: 10 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0 }}
-                                    className="mt-4 p-4 bg-red-50 border border-red-200 rounded-xl text-red-700 text-sm font-medium"
+                                    className="mt-4 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm font-medium"
                                 >
                                     Failed to submit application. Please try again.
                                 </motion.div>

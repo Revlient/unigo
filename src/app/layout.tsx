@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TalentBridge | Connecting Talent With Opportunity",
-  description: "TalentBridge is a premier HR recruitment agency specializing in talent acquisition, executive hiring, campus recruitment, and HR consulting. Find your dream job or hire top talent today.",
+  title: "UniGo | Connecting Talent With Opportunity",
+  description: "UniGo is a premier HR recruitment agency specializing in talent acquisition, executive hiring, campus recruitment, and HR consulting. Find your dream job or hire top talent today.",
   keywords: "recruitment, HR, talent acquisition, jobs, hiring, careers, staffing",
 };
 

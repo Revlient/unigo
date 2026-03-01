@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getDb } from '@/lib/db';
+import { sendContactEmail } from '@/lib/email';
 
 export async function POST(request: NextRequest) {
     try {
@@ -13,15 +13,31 @@ export async function POST(request: NextRequest) {
             );
         }
 
-        const db = getDb();
-        const stmt = db.prepare(
-            'INSERT INTO contact_messages (name, email, phone, message) VALUES (?, ?, ?, ?)'
-        );
-        await stmt.run([name, email, phone, message]);
+        // Send email notification (non-blocking)
+        try {
+            await sendContactEmail({ name, email, phone, message });
+        } catch (emailError) {
+            console.error('Email sending failed (non-critical):', emailError);
+        }
+
+        // Also save to DB if available
+        try {
+            const { isVercelWithoutDb } = await import('@/lib/db');
+            if (!isVercelWithoutDb) {
+                const { getDb } = await import('@/lib/db');
+                const db = getDb();
+                const stmt = db.prepare(
+                    'INSERT INTO contact_messages (name, email, phone, message) VALUES (?, ?, ?, ?)'
+                );
+                await stmt.run([name, email, phone, message]);
+            }
+        } catch {
+            console.log('DB save skipped (not configured)');
+        }
 
         return NextResponse.json({ success: true, message: 'Message sent successfully!' });
     } catch (error) {
-        console.error('Error saving contact message:', error);
+        console.error('Error handling contact form:', error);
         return NextResponse.json(
             { error: 'Failed to send message' },
             { status: 500 }

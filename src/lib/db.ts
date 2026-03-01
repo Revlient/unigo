@@ -1,12 +1,9 @@
-import Database from 'better-sqlite3';
-import { sql } from '@vercel/postgres';
 import path from 'path';
 
 const DB_PATH = path.join(process.cwd(), 'data', 'hr-recruit.db');
 
-let sqliteDb: Database.Database | null = null;
-
-export const isProd = process.env.NODE_ENV === 'production' || process.env.VERCEL === '1';
+export const isVercelWithoutDb = process.env.VERCEL === '1' && !process.env.POSTGRES_URL;
+export const isVercelProd = process.env.VERCEL === '1' && !!process.env.POSTGRES_URL;
 
 // Unified DB Response type
 export interface DbInterface {
@@ -19,12 +16,18 @@ export interface DbInterface {
   transaction: (fn: Function) => any;
 }
 
+let sqliteDb: any = null;
+
 export function getDb(): DbInterface {
-  if (isProd) {
-    // Production: Vercel Postgres
+  if (isVercelWithoutDb) {
+    throw new Error('No database configured on Vercel. Use demo data fallback.');
+  }
+
+  if (isVercelProd) {
+    // Production with Vercel Postgres
+    const { sql } = require('@vercel/postgres');
     return {
       prepare: (query: string) => {
-        // Standardize parameters for Postgres ($1) vs SQLite (?)
         let paramCount = 0;
         const standardizedQuery = query.replace(/\?/g, () => `$${++paramCount}`);
 
@@ -49,8 +52,9 @@ export function getDb(): DbInterface {
     };
   }
 
-  // Local Development: SQLite (wrapped in Promises for consistency)
+  // Local Development: SQLite (dynamic import to avoid Vercel build failure)
   if (!sqliteDb) {
+    const Database = require('better-sqlite3');
     const fs = require('fs');
     const dir = path.dirname(DB_PATH);
     if (!fs.existsSync(dir)) {
@@ -77,7 +81,7 @@ export function getDb(): DbInterface {
   };
 }
 
-function initializeSchemaLocal(db: Database.Database) {
+function initializeSchemaLocal(db: any) {
   db.exec(`
     CREATE TABLE IF NOT EXISTS jobs (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
