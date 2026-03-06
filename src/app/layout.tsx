@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "UniGo | Connecting Talent With Opportunity",
-  description: "UniGo is a premier HR recruitment agency specializing in talent acquisition, executive hiring, campus recruitment, and HR consulting. Find your dream job or hire top talent today.",
-  keywords: "recruitment, HR, talent acquisition, jobs, hiring, careers, staffing",
+  title: "UniGo | Premier Career Solutions",
+  description: "UniGo partners with ambitious organizations to identify, attract, and secure exceptional talent. Global talent acquisition, visa process assistance, accommodation services, and HR consulting across Bahrain, Dubai, Poland, and beyond.",
+  keywords: "recruitment, HR, talent acquisition, jobs, hiring, careers, staffing, visa assistance, global recruitment, UniGo",
 };
 
 export default function RootLayout({

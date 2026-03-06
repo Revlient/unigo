@@ -3,27 +3,25 @@
 import { motion } from 'framer-motion';
 import { fadeInUp } from '@/lib/animations';
 
-const companies = [
-    { name: 'Google', logo: 'G' },
-    { name: 'Infosys', logo: 'I' },
-    { name: 'TCS', logo: 'T' },
-    { name: 'Wipro', logo: 'W' },
-    { name: 'Amazon', logo: 'A' },
-    { name: 'Microsoft', logo: 'M' },
-    { name: 'Accenture', logo: 'Ac' },
-    { name: 'Deloitte', logo: 'D' },
-    { name: 'IBM', logo: 'IB' },
-    { name: 'HCL Tech', logo: 'H' },
-    { name: 'Cognizant', logo: 'C' },
-    { name: 'Capgemini', logo: 'Ca' },
+const countries = [
+    { name: 'Bahrain', flag: '🇧🇭' },
+    { name: 'Dubai', flag: '🇦🇪' },
+    { name: 'Saudi Arabia', flag: '🇸🇦' },
+    { name: 'Poland', flag: '🇵🇱' },
+    { name: 'Slovakia', flag: '🇸🇰' },
+    { name: 'Finland', flag: '🇫🇮' },
+    { name: 'Luxemburg', flag: '🇱🇺' },
+    { name: 'Albania', flag: '🇦🇱' },
+    { name: 'Israel', flag: '🇮🇱' },
+    { name: 'Azerbaijan', flag: '🇦🇿' },
 ];
 
-function CompanyLogo({ name, logo }: { name: string; logo: string }) {
+function CountryCard({ name, flag }: { name: string; flag: string }) {
     return (
         <div className="flex-shrink-0 mx-6 group cursor-default">
             <div className="flex items-center gap-3 px-8 py-4 bg-[#141414] rounded-2xl shadow-sm border border-white/5 hover:shadow-md hover:border-blue-500/20 transition-all duration-300">
-                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 font-bold text-sm">
-                    {logo}
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-2xl">
+                    {flag}
                 </div>
                 <span className="text-gray-300 font-semibold whitespace-nowrap">{name}</span>
             </div>
@@ -44,11 +42,11 @@ export default function CompaniesMarquee() {
                 >
                     <div className="inline-flex items-center gap-2 mb-4">
                         <div className="w-8 h-1 bg-blue-500 rounded-full" />
-                        <span className="text-sm font-semibold text-blue-400 uppercase tracking-wider">Our Partners</span>
+                        <span className="text-sm font-semibold text-blue-400 uppercase tracking-wider">Our Global Footprint</span>
                         <div className="w-8 h-1 bg-blue-500 rounded-full" />
                     </div>
                     <h2 className="text-3xl md:text-4xl font-bold text-white">
-                        Companies We Recruit For
+                        Countries We Recruit For
                     </h2>
                 </motion.div>
             </div>
@@ -59,8 +57,8 @@ export default function CompaniesMarquee() {
                 <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
 
                 <div className="flex animate-marquee group-hover:[animation-play-state:paused]">
-                    {[...companies, ...companies].map((company, i) => (
-                        <CompanyLogo key={`row1-${i}`} name={company.name} logo={company.logo} />
+                    {[...countries, ...countries].map((country, i) => (
+                        <CountryCard key={`row1-${i}`} name={country.name} flag={country.flag} />
                     ))}
                 </div>
             </div>
@@ -71,8 +69,8 @@ export default function CompaniesMarquee() {
                 <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0d0d0d] to-transparent z-10 pointer-events-none" />
 
                 <div className="flex animate-marquee-reverse group-hover:[animation-play-state:paused]">
-                    {[...companies.slice().reverse(), ...companies.slice().reverse()].map((company, i) => (
-                        <CompanyLogo key={`row2-${i}`} name={company.name} logo={company.logo} />
+                    {[...countries.slice().reverse(), ...countries.slice().reverse()].map((country, i) => (
+                        <CountryCard key={`row2-${i}`} name={country.name} flag={country.flag} />
                     ))}
                 </div>
             </div>

@@ -38,29 +38,37 @@ export default function About() {
                             </div>
 
                             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                                Your Trusted Partner in{' '}
-                                <span className="text-blue-400">Talent Acquisition</span>
+                                Built on Trust.{' '}
+                                <span className="text-blue-400">Driven by Precision.</span>
                             </h2>
 
-                            <p className="text-gray-400 leading-relaxed mb-6">
-                                With over a decade of experience in the recruitment industry, UniGo has
-                                been at the forefront of connecting exceptional professionals with leading
-                                organizations across India and beyond. Our deep understanding of diverse
-                                industries enables us to find the perfect match every time.
+                            <p className="text-gray-400 leading-relaxed mb-4">
+                                UniGo partners with ambitious organizations to identify, attract, and secure
+                                exceptional talent. We don&apos;t believe in volume hiring or transactional
+                                recruitment. We believe in alignment; of vision, capability, and culture.
                             </p>
 
-                            <p className="text-gray-400 leading-relaxed mb-8">
-                                We believe that the right talent can transform organizations. Our team of
-                                experienced recruiters leverages cutting-edge technology and a vast network
-                                of professionals to deliver results that exceed expectations. From entry-level
-                                positions to C-suite placements, we handle it all with precision and care.
+                            <p className="text-gray-400 leading-relaxed mb-4">
+                                Every mandate we undertake is handled with strategic focus and discretion.
+                                Our approach combines market intelligence, deep industry insight, and a
+                                carefully cultivated professional network to deliver talent that creates
+                                measurable impact.
+                            </p>
+
+                            <p className="text-gray-400 leading-relaxed mb-4">
+                                From critical mid-management roles to senior leadership appointments, we
+                                operate with clarity, confidentiality, and an uncompromising standard of quality.
+                            </p>
+
+                            <p className="text-gray-300 leading-relaxed mb-8 font-medium">
+                                At UniGo, we bring ambitious talent and forward-thinking companies together.
                             </p>
 
                             <div className="grid grid-cols-3 gap-6">
                                 {[
-                                    { number: '500+', label: 'Clients Served' },
-                                    { number: '10K+', label: 'Placements' },
-                                    { number: '98%', label: 'Success Rate' },
+                                    { number: '100+', label: 'Clients Served' },
+                                    { number: '5K+', label: 'Hiring Partners' },
+                                    { number: '95%', label: 'Success Rate' },
                                 ].map((stat) => (
                                     <div key={stat.label} className="text-center">
                                         <div className="text-2xl md:text-3xl font-bold text-blue-400">{stat.number}</div>

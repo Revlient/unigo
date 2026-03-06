@@ -25,20 +25,17 @@ export default function Footer() {
                             <span className="text-blue-400">Go</span>
                         </div>
                         <p className="text-gray-500 text-sm leading-relaxed mb-4">
-                            Connecting exceptional talent with forward-thinking organizations.
-                            Your trusted partner in recruitment and HR solutions.
+                            A strategic partner in recruitment and human capital.
+                            Delivering intelligent recruitment and HR solutions worldwide.
+                        </p>
+                        <p className="text-gray-600 text-xs leading-relaxed mb-2">
+                            📞 +91 7994885666
                         </p>
                         <p className="text-gray-600 text-xs leading-relaxed mb-4">
-                            1st Floor, Thykoottathil Square, Civil Line Rd,
-                            opp. St. Joseph Church, Vazhakkala, Kochi, Kakkanad, Kerala 682030
-                        </p>
-                        <p className="text-gray-500 text-xs">
-                            ✉ info@themagnateacademy.com
+                            ✉ info@unigo.co
                         </p>
                         <div className="flex gap-3">
                             {[
-                                { name: 'LinkedIn', icon: 'in' },
-                                { name: 'Twitter', icon: '𝕏' },
                                 { name: 'Facebook', icon: 'f' },
                                 { name: 'Instagram', icon: '📷' },
                             ].map((social) => (
@@ -58,7 +55,7 @@ export default function Footer() {
                     <motion.div variants={fadeInUp}>
                         <h4 className="text-white font-semibold mb-5">Quick Links</h4>
                         <ul className="space-y-3">
-                            {['Home', 'About Us', 'Services', 'Open Jobs', 'Contact'].map((link) => (
+                            {['Home', 'About Us', 'Services', 'Careers', 'Contact'].map((link) => (
                                 <li key={link}>
                                     <a
                                         href={`#${link.toLowerCase().replace(' ', '-')}`}
@@ -75,7 +72,7 @@ export default function Footer() {
                     <motion.div variants={fadeInUp}>
                         <h4 className="text-white font-semibold mb-5">Services</h4>
                         <ul className="space-y-3">
-                            {['Talent Acquisition', 'Executive Hiring', 'Campus Recruitment', 'HR Consulting', 'Staffing Solutions'].map(
+                            {['Global Talent Acquisition', 'Visa Process Assistance', 'Accommodation Services', 'HR Consulting'].map(
                                 (service) => (
                                     <li key={service}>
                                         <a href="#services" className="text-gray-500 text-sm hover:text-blue-400 transition-colors duration-200">
@@ -87,15 +84,19 @@ export default function Footer() {
                         </ul>
                     </motion.div>
 
-                    {/* Legal */}
+                    {/* Locations */}
                     <motion.div variants={fadeInUp}>
-                        <h4 className="text-white font-semibold mb-5">Legal</h4>
+                        <h4 className="text-white font-semibold mb-5">Our Locations</h4>
                         <ul className="space-y-3">
-                            {['Privacy Policy', 'Terms of Service', 'Cookie Policy', 'GDPR Compliance'].map((item) => (
-                                <li key={item}>
-                                    <a href="#" className="text-gray-500 text-sm hover:text-blue-400 transition-colors duration-200">
-                                        {item}
-                                    </a>
+                            {['Kochi, India', 'Dubai, UAE', 'Poland', 'Bahrain'].map((location) => (
+                                <li key={location}>
+                                    <span className="text-gray-500 text-sm flex items-center gap-2">
+                                        <svg className="w-3.5 h-3.5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                        {location}
+                                    </span>
                                 </li>
                             ))}
                         </ul>
@@ -115,9 +116,6 @@ export default function Footer() {
                         </a>
                         <a href="#" className="text-gray-600 text-sm hover:text-blue-400 transition-colors">
                             Terms
-                        </a>
-                        <a href="#" className="text-gray-600 text-sm hover:text-blue-400 transition-colors">
-                            Sitemap
                         </a>
                     </div>
                 </div>

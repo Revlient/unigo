@@ -78,7 +78,7 @@ export default function Hero() {
                         className="inline-block mb-4 sm:mb-6 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full bg-white/5 backdrop-blur-sm border border-white/10"
                     >
                         <span className="text-xs sm:text-sm font-medium text-blue-400 tracking-wider uppercase">
-                            Premier HR Solutions
+                            Premier Career Solutions
                         </span>
                     </motion.div>
 
@@ -86,10 +86,10 @@ export default function Hero() {
                         variants={fadeInUp}
                         className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
                     >
-                        Connecting Talent
+                        Aligning Outstanding Talent
                         <br />
                         <span className="bg-gradient-to-r from-blue-400 via-blue-300 to-cyan-300 bg-clip-text text-transparent">
-                            With Opportunity
+                            With Visionary Organizations
                         </span>
                     </motion.h1>
 
@@ -97,8 +97,8 @@ export default function Hero() {
                         variants={fadeInUp}
                         className="text-sm sm:text-lg md:text-xl text-gray-400 mb-6 sm:mb-10 max-w-2xl mx-auto leading-relaxed"
                     >
-                        We specialize in bridging the gap between exceptional talent and forward-thinking
-                        organizations. Your next career milestone starts here.
+                        A strategic partner in recruitment and human capital.
+                        Delivering intelligent recruitment and HR solutions worldwide.
                     </motion.p>
 
                     <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-2 sm:px-0">
